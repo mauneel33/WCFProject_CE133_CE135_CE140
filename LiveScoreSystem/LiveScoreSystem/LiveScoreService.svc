@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="LiveScoreSystem.LiveScoreService" CodeBehind="LiveScoreService.svc.cs" %>

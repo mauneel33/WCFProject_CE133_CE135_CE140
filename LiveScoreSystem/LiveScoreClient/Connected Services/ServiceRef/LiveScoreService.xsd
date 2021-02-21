@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LiveScoreSystem" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LiveScoreSystem" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="Player">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Balls" type="xs:int" />
+      <xs:element minOccurs="0" name="Batruns" type="xs:int" />
+      <xs:element minOccurs="0" name="Bowlruns" type="xs:int" />
+      <xs:element minOccurs="0" name="Economy" type="xs:double" />
+      <xs:element minOccurs="0" name="Fours" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Overs" type="xs:double" />
+      <xs:element minOccurs="0" name="Sixes" type="xs:int" />
+      <xs:element minOccurs="0" name="Status" type="xs:int" />
+      <xs:element minOccurs="0" name="Strikerate" type="xs:double" />
+      <xs:element minOccurs="0" name="Team_id" type="xs:int" />
+      <xs:element minOccurs="0" name="Type" type="xs:int" />
+      <xs:element minOccurs="0" name="Wickets" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Player" nillable="true" type="tns:Player" />
+  <xs:complexType name="Team">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Noball" type="xs:int" />
+      <xs:element minOccurs="0" name="Overs" type="xs:double" />
+      <xs:element minOccurs="0" name="Runrate" type="xs:double" />
+      <xs:element minOccurs="0" name="Score" type="xs:int" />
+      <xs:element minOccurs="0" name="Wickets" type="xs:int" />
+      <xs:element minOccurs="0" name="Wideball" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Team" nillable="true" type="tns:Team" />
+  <xs:complexType name="Match">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Batfirstid" type="xs:int" />
+      <xs:element minOccurs="0" name="EndComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Endtime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Inning" type="xs:int" />
+      <xs:element minOccurs="0" name="InningComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Overs" type="xs:int" />
+      <xs:element minOccurs="0" name="Starttime" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Team1Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Team2Id" type="xs:int" />
+      <xs:element minOccurs="0" name="TossComment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="WinnerId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Match" nillable="true" type="tns:Match" />
+  <xs:complexType name="Commentary">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Match_ID" type="xs:int" />
+      <xs:element minOccurs="0" name="Over" type="xs:double" />
+      <xs:element minOccurs="0" name="Time" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Commentary" nillable="true" type="tns:Commentary" />
+  <xs:complexType name="ArrayOfPlayer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Player" nillable="true" type="tns:Player" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlayer" nillable="true" type="tns:ArrayOfPlayer" />
+  <xs:complexType name="ArrayOfCommentary">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Commentary" nillable="true" type="tns:Commentary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCommentary" nillable="true" type="tns:ArrayOfCommentary" />
+</xs:schema>

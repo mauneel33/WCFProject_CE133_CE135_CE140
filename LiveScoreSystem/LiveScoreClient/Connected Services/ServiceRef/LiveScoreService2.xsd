@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8000/LiveScoreService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LiveScoreSystem" />
+  <xs:element name="insertPlayer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LiveScoreSystem" minOccurs="0" name="player" nillable="true" type="q1:Player" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertPlayerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertTeam">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/LiveScoreSystem" minOccurs="0" name="team" nillable="true" type="q2:Team" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertTeamResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertTeamResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertMatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/LiveScoreSystem" minOccurs="0" name="match" nillable="true" type="q3:Match" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertMatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="insertMatchResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertCommentary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/LiveScoreSystem" minOccurs="0" name="comment" nillable="true" type="q4:Commentary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="insertCommentaryResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTeamName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teamid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTeamNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getTeamNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMatchTitle">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMatchTitleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getMatchTitleResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateToss">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+        <xs:element minOccurs="0" name="batfirstid" type="xs:int" />
+        <xs:element minOccurs="0" name="tosscom" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateTossResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTossCom">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTossComResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getTossComResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTeamDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teamid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getTeamDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LiveScoreSystem" minOccurs="0" name="getTeamDetailsResult" nillable="true" type="q5:Team" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPlayerDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getPlayerDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/LiveScoreSystem" minOccurs="0" name="getPlayerDetailsResult" nillable="true" type="q6:Player" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getNextBatsmans">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teamid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getNextBatsmansResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/LiveScoreSystem" minOccurs="0" name="getNextBatsmansResult" nillable="true" type="q7:ArrayOfPlayer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOpeners">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teamid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getOpenersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/LiveScoreSystem" minOccurs="0" name="getOpenersResult" nillable="true" type="q8:ArrayOfPlayer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBowlers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teamid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getBowlersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/LiveScoreSystem" minOccurs="0" name="getBowlersResult" nillable="true" type="q9:ArrayOfPlayer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateBall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="batteamid" type="xs:int" />
+        <xs:element minOccurs="0" name="bowlteamid" type="xs:int" />
+        <xs:element minOccurs="0" name="strikerid" type="xs:int" />
+        <xs:element minOccurs="0" name="nonstriker" type="xs:int" />
+        <xs:element minOccurs="0" name="bowlerid" type="xs:int" />
+        <xs:element minOccurs="0" name="runonball" type="xs:int" />
+        <xs:element minOccurs="0" name="balltype" type="xs:int" />
+        <xs:element minOccurs="0" name="wickettype" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateBallResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateBallResult" type="xs:double" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateTeamOver">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="overs" type="xs:double" />
+        <xs:element minOccurs="0" name="batteamid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateTeamOverResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateBowlOver">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="overs" type="xs:double" />
+        <xs:element minOccurs="0" name="bowlerid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateBowlOverResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateInning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inning" type="xs:int" />
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateInningResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateInningComm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="inncomm" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateInningCommResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInnComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInnCommentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getInnCommentResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInning">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getInningResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getInningResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMatchOvers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMatchOversResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getMatchOversResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateWinner">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="winnerid" type="xs:int" />
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateWinnerResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateEndComm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="endcom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateEndCommResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateEndTime">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="endtime" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateEndTimeResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCommentary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getCommentaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/LiveScoreSystem" minOccurs="0" name="getCommentaryResult" nillable="true" type="q10:ArrayOfCommentary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteComm">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="deleteCommResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllBatsman">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="teamid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getAllBatsmanResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/LiveScoreSystem" minOccurs="0" name="getAllBatsmanResult" nillable="true" type="q11:ArrayOfPlayer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWinnerId">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getWinnerIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getWinnerIdResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEndComm">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getEndCommResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getEndCommResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

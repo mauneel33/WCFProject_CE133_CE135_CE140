@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LiveScoreService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8000/LiveScoreService?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8000/LiveScoreService?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8000/LiveScoreService?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/LiveScoreSystem" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILiveScoreService_insertPlayer_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertPlayer" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_insertPlayer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertPlayerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_insertTeam_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertTeam" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_insertTeam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertTeamResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_insertMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertMatch" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_insertMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_insertCommentary_InputMessage">
+    <wsdl:part name="parameters" element="tns:insertCommentary" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_insertCommentary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:insertCommentaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getTeamName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTeamName" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getTeamName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTeamNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getMatchTitle_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMatchTitle" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getMatchTitle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMatchTitleResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateToss_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateToss" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateToss_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateTossResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getTossCom_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTossCom" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getTossCom_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTossComResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getTeamDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTeamDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getTeamDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTeamDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getPlayerDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPlayerDetails" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getPlayerDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPlayerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getNextBatsmans_InputMessage">
+    <wsdl:part name="parameters" element="tns:getNextBatsmans" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getNextBatsmans_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getNextBatsmansResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getOpeners_InputMessage">
+    <wsdl:part name="parameters" element="tns:getOpeners" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getOpeners_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getOpenersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getBowlers_InputMessage">
+    <wsdl:part name="parameters" element="tns:getBowlers" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getBowlers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getBowlersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateBall_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateBall" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateBall_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateBallResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateTeamOver_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateTeamOver" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateTeamOver_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateTeamOverResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateBowlOver_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateBowlOver" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateBowlOver_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateBowlOverResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateInning_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateInning" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateInning_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateInningResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateInningComm_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateInningComm" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateInningComm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateInningCommResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getInnComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:getInnComment" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getInnComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getInnCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getInning_InputMessage">
+    <wsdl:part name="parameters" element="tns:getInning" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getInning_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getInningResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getMatchOvers_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMatchOvers" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getMatchOvers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMatchOversResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateWinner_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateWinner" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateWinner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateWinnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateEndComm_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateEndComm" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateEndComm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateEndCommResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateEndTime_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateEndTime" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_updateEndTime_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateEndTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getCommentary_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCommentary" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getCommentary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCommentaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_deleteComm_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteComm" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_deleteComm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCommResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getAllBatsman_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllBatsman" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getAllBatsman_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllBatsmanResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getWinnerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getWinnerId" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getWinnerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getWinnerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getEndComm_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEndComm" />
+  </wsdl:message>
+  <wsdl:message name="ILiveScoreService_getEndComm_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEndCommResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILiveScoreService">
+    <wsdl:operation name="insertPlayer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/insertPlayer" message="tns:ILiveScoreService_insertPlayer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/insertPlayerResponse" message="tns:ILiveScoreService_insertPlayer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertTeam">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/insertTeam" message="tns:ILiveScoreService_insertTeam_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/insertTeamResponse" message="tns:ILiveScoreService_insertTeam_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/insertMatch" message="tns:ILiveScoreService_insertMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/insertMatchResponse" message="tns:ILiveScoreService_insertMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="insertCommentary">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/insertCommentary" message="tns:ILiveScoreService_insertCommentary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/insertCommentaryResponse" message="tns:ILiveScoreService_insertCommentary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTeamName">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getTeamName" message="tns:ILiveScoreService_getTeamName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getTeamNameResponse" message="tns:ILiveScoreService_getTeamName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMatchTitle">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getMatchTitle" message="tns:ILiveScoreService_getMatchTitle_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getMatchTitleResponse" message="tns:ILiveScoreService_getMatchTitle_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateToss">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/updateToss" message="tns:ILiveScoreService_updateToss_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/updateTossResponse" message="tns:ILiveScoreService_updateToss_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTossCom">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getTossCom" message="tns:ILiveScoreService_getTossCom_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getTossComResponse" message="tns:ILiveScoreService_getTossCom_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTeamDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getTeamDetails" message="tns:ILiveScoreService_getTeamDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getTeamDetailsResponse" message="tns:ILiveScoreService_getTeamDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPlayerDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getPlayerDetails" message="tns:ILiveScoreService_getPlayerDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getPlayerDetailsResponse" message="tns:ILiveScoreService_getPlayerDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getNextBatsmans">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getNextBatsmans" message="tns:ILiveScoreService_getNextBatsmans_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getNextBatsmansResponse" message="tns:ILiveScoreService_getNextBatsmans_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getOpeners">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getOpeners" message="tns:ILiveScoreService_getOpeners_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getOpenersResponse" message="tns:ILiveScoreService_getOpeners_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getBowlers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getBowlers" message="tns:ILiveScoreService_getBowlers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getBowlersResponse" message="tns:ILiveScoreService_getBowlers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBall">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/updateBall" message="tns:ILiveScoreService_updateBall_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/updateBallResponse" message="tns:ILiveScoreService_updateBall_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateTeamOver">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/updateTeamOver" message="tns:ILiveScoreService_updateTeamOver_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/updateTeamOverResponse" message="tns:ILiveScoreService_updateTeamOver_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBowlOver">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/updateBowlOver" message="tns:ILiveScoreService_updateBowlOver_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/updateBowlOverResponse" message="tns:ILiveScoreService_updateBowlOver_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateInning">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/updateInning" message="tns:ILiveScoreService_updateInning_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/updateInningResponse" message="tns:ILiveScoreService_updateInning_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateInningComm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/updateInningComm" message="tns:ILiveScoreService_updateInningComm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/updateInningCommResponse" message="tns:ILiveScoreService_updateInningComm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getInnComment">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getInnComment" message="tns:ILiveScoreService_getInnComment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getInnCommentResponse" message="tns:ILiveScoreService_getInnComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getInning">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getInning" message="tns:ILiveScoreService_getInning_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getInningResponse" message="tns:ILiveScoreService_getInning_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMatchOvers">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getMatchOvers" message="tns:ILiveScoreService_getMatchOvers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getMatchOversResponse" message="tns:ILiveScoreService_getMatchOvers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateWinner">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/updateWinner" message="tns:ILiveScoreService_updateWinner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/updateWinnerResponse" message="tns:ILiveScoreService_updateWinner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateEndComm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/updateEndComm" message="tns:ILiveScoreService_updateEndComm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/updateEndCommResponse" message="tns:ILiveScoreService_updateEndComm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateEndTime">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/updateEndTime" message="tns:ILiveScoreService_updateEndTime_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/updateEndTimeResponse" message="tns:ILiveScoreService_updateEndTime_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCommentary">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getCommentary" message="tns:ILiveScoreService_getCommentary_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getCommentaryResponse" message="tns:ILiveScoreService_getCommentary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteComm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/deleteComm" message="tns:ILiveScoreService_deleteComm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/deleteCommResponse" message="tns:ILiveScoreService_deleteComm_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllBatsman">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getAllBatsman" message="tns:ILiveScoreService_getAllBatsman_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getAllBatsmanResponse" message="tns:ILiveScoreService_getAllBatsman_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getWinnerId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getWinnerId" message="tns:ILiveScoreService_getWinnerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getWinnerIdResponse" message="tns:ILiveScoreService_getWinnerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEndComm">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveScoreService/getEndComm" message="tns:ILiveScoreService_getEndComm_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveScoreService/getEndCommResponse" message="tns:ILiveScoreService_getEndComm_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILiveScoreService" type="tns:ILiveScoreService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insertPlayer">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/insertPlayer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertTeam">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/insertTeam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertMatch">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/insertMatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insertCommentary">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/insertCommentary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTeamName">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getTeamName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMatchTitle">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getMatchTitle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateToss">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/updateToss" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTossCom">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getTossCom" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTeamDetails">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getTeamDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPlayerDetails">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getPlayerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNextBatsmans">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getNextBatsmans" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOpeners">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getOpeners" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getBowlers">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getBowlers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBall">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/updateBall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateTeamOver">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/updateTeamOver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBowlOver">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/updateBowlOver" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInning">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/updateInning" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateInningComm">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/updateInningComm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInnComment">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getInnComment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getInning">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getInning" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMatchOvers">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getMatchOvers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWinner">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/updateWinner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEndComm">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/updateEndComm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEndTime">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/updateEndTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCommentary">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getCommentary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteComm">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/deleteComm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllBatsman">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getAllBatsman" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getWinnerId">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getWinnerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEndComm">
+      <soap:operation soapAction="http://tempuri.org/ILiveScoreService/getEndComm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LiveScoreService">
+    <wsdl:port name="BasicHttpBinding_ILiveScoreService" binding="tns:BasicHttpBinding_ILiveScoreService">
+      <soap:address location="http://localhost:8000/LiveScoreService/LiveScoreService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

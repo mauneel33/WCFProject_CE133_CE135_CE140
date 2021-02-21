@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0deaf909-50c6-482c-a8c3-58ce8aada5e2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8000/LiveScoreService" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LiveScoreService.wsdl" MetadataType="Wsdl" ID="a999b0cb-ba60-48e5-954b-d5ff99ab0f12" SourceId="1" SourceUrl="http://localhost:8000/LiveScoreService?wsdl" />
+    <MetadataFile FileName="LiveScoreService.disco" MetadataType="Disco" ID="502095b7-f3c5-474d-ad23-365734dd8b71" SourceId="1" SourceUrl="http://localhost:8000/LiveScoreService?disco" />
+    <MetadataFile FileName="LiveScoreService.xsd" MetadataType="Schema" ID="0b1ba0ec-d3a3-47d0-a680-856689a0823d" SourceId="1" SourceUrl="http://localhost:8000/LiveScoreService?xsd=xsd2" />
+    <MetadataFile FileName="LiveScoreService1.xsd" MetadataType="Schema" ID="23e89922-3146-421d-a493-1ba0fae42488" SourceId="1" SourceUrl="http://localhost:8000/LiveScoreService?xsd=xsd1" />
+    <MetadataFile FileName="LiveScoreService2.xsd" MetadataType="Schema" ID="3adfd705-d852-4f01-9204-db67f5289d20" SourceId="1" SourceUrl="http://localhost:8000/LiveScoreService?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
